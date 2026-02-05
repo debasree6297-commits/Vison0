@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vision - Create Faster, Dream Bigger</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Tailwind Config -->
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
+            },
+            colors: {
+              'default-bg-primary': '#FAF8F5',
+              'default-bg-secondary': '#F5EFE6',
+              'default-accent-gold': '#D4AF37',
+              'default-accent-peach': '#FFD7BE',
+              'default-text-primary': '#2D2D2D',
+              'default-text-secondary': '#6B6B6B',
+              'default-border': 'rgba(200, 184, 160, 0.3)',
+              'space-bg-primary': '#0A1128',
+              'space-bg-secondary': '#1A1A2E',
+              'space-card': '#16213E',
+              'space-accent-cyan': '#00D9FF',
+              'space-accent-purple': '#A855F7',
+              'space-accent-pink': '#FF006E',
+              'space-text-primary': '#FFFFFF',
+              'space-text-secondary': '#D1D5DB',
+              'space-border': 'rgba(0, 217, 255, 0.2)',
+            }
+          },
+        },
+      }
+    </script>
+
+    <!-- Global Styles -->
+    <style>
+      :root {
+        --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+        --ease-in: cubic-bezier(0.7, 0, 0.84, 1);
+        --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+        --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+        --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+        --bg-gradient: linear-gradient(-45deg, #FAF8F5, #F5EFE6, #FFD7BE, #FAF8F5);
+      }
+
+      .dark {
+        --bg-gradient: linear-gradient(-45deg, #0A1128, #1A1A2E, #16213E, #0A1128);
+      }
+
+      body {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        overflow-x: hidden;
+        background: var(--bg-gradient);
+        background-size: 200% 200%;
+        animation: gradient-animation 15s ease infinite;
+        transition: background 0.5s ease;
+      }
+
+      @keyframes gradient-animation {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+
+      .glass-card {
+        background: rgba(255, 255, 255, 0.5);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        transition: transform 0.3s var(--ease-smooth), box-shadow 0.3s var(--ease-smooth);
+      }
+
+      .dark .glass-card {
+        background: rgba(22, 33, 62, 0.5);
+      }
+
+      h1, h2, h3 {
+        letter-spacing: -0.025em;
+      }
+
+      .accelerated {
+        will-change: transform, opacity;
+        backface-visibility: hidden;
+        perspective: 1000px;
+      }
+
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: rgba(212, 175, 55, 0.3);
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: rgba(212, 175, 55, 0.5);
+      }
+    </style>
+
+    <!-- IMPORT MAP -->
+    <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@18.3.1",
+    "react/": "https://esm.sh/react@18.3.1/",
+    "react-dom": "https://esm.sh/react-dom@18.3.1",
+    "react-dom/": "https://esm.sh/react-dom@18.3.1/",
+    "react-dom/client": "https://esm.sh/react-dom@18.3.1/client",
+    "react/jsx-runtime": "https://esm.sh/react@18.3.1/jsx-runtime",
+    "framer-motion": "https://esm.sh/framer-motion@11.11.11?deps=react@18.3.1",
+    "lucide-react": "https://esm.sh/lucide-react@0.417.0?deps=react@18.3.1",
+    "react-router-dom": "https://esm.sh/react-router-dom@6.22.3?deps=react@18.3.1",
+    "three": "https://esm.sh/three@0.167.0",
+    "@react-three/fiber": "https://esm.sh/@react-three/fiber@8.16.8?deps=react@18.3.1,three@0.167.0",
+    "@react-three/drei": "https://esm.sh/@react-three/drei@9.108.3?deps=react@18.3.1,three@0.167.0",
+    "@google/genai": "https://esm.sh/@google/genai@0.14.0",
+    "@supabase/supabase-js": "https://esm.sh/@supabase/supabase-js@2.44.4",
+    "@react-three/fiber/": "https://esm.sh/@react-three/fiber@^9.5.0/"
+  }
+}
+</script>
+  <link rel="stylesheet" href="/index.css">
+</head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
